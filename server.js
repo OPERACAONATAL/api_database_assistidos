@@ -15,7 +15,16 @@ const port = process.env.PORT || 3000;
 dotenv.config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI);
+// If running locally
+mongoose.connect("mongodb://localhost:27017/opn");
+mongoose.connection.on('connected', () => {
+	console.log("connected to database mongodb://localhost:27017/opn");
+});
+mongoose.connection.on('error', (err) => {
+	console.log("Database error "+ err);
+});
+// mongoose.connect(process.env.MONGODB_URI);
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

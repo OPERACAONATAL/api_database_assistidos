@@ -3,6 +3,11 @@
 const mongoose = require('mongoose');
 
 const cardSchema = new mongoose.Schema({
+    _id: {
+        type: Number,
+        requied: 'Digite o nome da pessoa',
+        unique : true
+    },
     name: {
         type: String,
         requied: 'Digite o nome da pessoa'
