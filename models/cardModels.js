@@ -5,34 +5,48 @@ const mongoose = require('mongoose');
 const cardSchema = new mongoose.Schema({
     _id: {
         type: Number,
-        requied: 'Digite o nome da pessoa',
         unique : true
     },
-    name: {
-        name: {
-            type: String,
-            requied: 'Digite o nome da pessoa'
+    nome: {
+        type: String,
+    },
+    idade: {
+        type: Number,
+    },
+    camiseta: {
+        tamanho: {
+            type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
         },
-        exists: Boolean
+        existe: Boolean
     },
-    age: {
-        age: {
-            type: Number,
-            requied: 'Digite a idade da pessoa'
+    calca: {
+        tamanho: {
+            type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
         },
-        exists: Boolean
+        existe: Boolean
     },
-    tshirt: {
-        type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
-        required: 'Digite o tamanho da camiseta'
+    roupa_intima: {
+        type: Boolean,
     },
-    underwear: {
-        type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
-        required: 'Digite o tamanho da peça'
+    guloseima: {
+        type: Boolean
     },
-    candy: {
-        exists: Boolean
+    shampoo: {
+        type: Boolean
+    },
+    sabonete: {
+        type: Boolean
+    },
+    escova_de_dente: {
+        type: Boolean
+    },
+    creme_dental: {
+        type: Boolean
+    },
+    observacao: {
+        type: String
     }
+
 });
 
 module.exports = mongoose.model('Cards', cardSchema);
