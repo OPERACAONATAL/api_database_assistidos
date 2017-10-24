@@ -9,16 +9,29 @@ const cardSchema = new mongoose.Schema({
         unique : true
     },
     name: {
-        type: String,
-        requied: 'Digite o nome da pessoa'
+        name: {
+            type: String,
+            requied: 'Digite o nome da pessoa'
+        },
+        exists: Boolean
     },
     age: {
-        type: Number,
-        required: 'Digite a idade da pessoa'
+        age: {
+            type: Number,
+            requied: 'Digite a idade da pessoa'
+        },
+        exists: Boolean
     },
     tshirt: {
         type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
         required: 'Digite o tamanho da camiseta'
+    },
+    underwear: {
+        type: String,   // Está como string porque os valores são do tipo 'P', 'M', 'G', etc...
+        required: 'Digite o tamanho da peça'
+    },
+    candy: {
+        exists: Boolean
     }
 });
 

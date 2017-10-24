@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+var methodOverride = require('method-override')
 
 const card = require('./models/cardModels');
 const routes = require('./routes/cardRoutes');
@@ -29,6 +30,7 @@ mongoose.connection.on('error', (err) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(methodOverride('_method'));
 
 routes(app);
 

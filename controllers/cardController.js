@@ -45,10 +45,12 @@ exports.read_card = (req, res) => {
 }
 
 exports.update_card = (req, res) => {
-    card_db.findOneAndUpdate({_id: req.params.cardId}, req.body, {new: true}, (err, card) => {
-        if(err)
-            res.send(err.message);
-        else
-            res.json(card);
-    });
+    console.log(req.body);
+    res.json(req.body);
+    // card_db.findOneAndUpdate({_id: req.params.cardId}, req.body, {new: true}, (err, card) => {
+    //     if(err)
+    //         res.send(err.message);
+    //     else
+    //         res.json(card);
+    // });
 }
