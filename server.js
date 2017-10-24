@@ -17,7 +17,7 @@ dotenv.config();
 
 mongoose.Promise = global.Promise;
 // If running locally
-mongoose.connect("mongodb://localhost:27017/opn");
+mongoose.connect("mongodb://localhost:27017/opn", {useMongoClient: true});
 mongoose.connection.on('connected', () => {
 	console.log("connected to database mongodb://localhost:27017/opn");
 });
