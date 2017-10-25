@@ -46,7 +46,13 @@ exports.update_card = (req, res) => {
             card.escova_de_dente = req.body.escova_de_dente;
             card.creme_dental = req.body.creme_dental;
             card.observacao = req.body.observacao;
-            res.json(card);
+            
+            /*  Salva no BD as alterações   */
+            card.save().then(data => {
+                res.json(data);
+            }).catch(error => {
+                res.json(error);
+            });
         }
     });
 }
