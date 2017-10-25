@@ -11,7 +11,7 @@ const cardSchema = new mongoose.Schema({
         type: String,
     },
     idade: {
-        type: Number,
+        type: String,   // por causa dos anos e meses que se escrevem
     },
     camiseta: {
         tamanho: {
