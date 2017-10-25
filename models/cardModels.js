@@ -51,8 +51,10 @@ const cardSchema = new mongoose.Schema({
     },
     observacao: {
         type: String
+    },
+    recebida: {
+        type: Boolean
     }
-
 });
 
 module.exports = mongoose.model('Cards', cardSchema);
